@@ -1,0 +1,7 @@
+{
+  "name": "@pe/components-receipt",
+  "version": "0.0.0",
+  "main": "src/index.ts",
+  "license": "UNLICENSED",
+  "private": true
+}
