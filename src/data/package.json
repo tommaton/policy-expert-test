@@ -1,0 +1,7 @@
+{
+  "name": "@pe/data-products",
+  "version": "0.0.0",
+  "main": "products/src/index.ts",
+  "license": "UNLICENSED",
+  "private": true
+}
