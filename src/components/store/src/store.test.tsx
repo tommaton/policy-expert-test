@@ -1,9 +1,9 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { productData } from '@pe/data';
 import Store from '.';
 
-const renderCoponent = () => render(<Store productList={productData} />);
+const renderCoponent = () => render(<Store />);
 
 describe('product', () => {
   it('should render store', () => {
@@ -13,10 +13,10 @@ describe('product', () => {
   });
 
   it('should render same number of product in product data', async () => {
-    const { findAllByText } = renderCoponent();
+    const { getAllByText } = renderCoponent();
 
-    const productItems = await findAllByText(/Item #[0-9]: /);
+    const productItems = getAllByText(/Item #[0-9]:/);
 
-    expect(productItems.length).toHaveLength(productData.length);
+    expect(productItems.length).toEqual(productData.length);
   });
 });

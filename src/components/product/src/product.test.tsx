@@ -14,7 +14,7 @@ describe('product', () => {
   it('should display name and price of product', () => {
     const { getByText } = renderCoomponent();
 
-    getByText(`Item #${defaultProps.id}`);
+    getByText(`Item #${defaultProps.id}:`);
     getByText(defaultProps.prodName);
     getByText(defaultProps.price);
   });
