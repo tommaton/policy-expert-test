@@ -1,0 +1,7 @@
+{
+  "name": "@pe/components-redux",
+  "version": "0.0.0",
+  "main": "store/index.ts",
+  "license": "UNLICENSED",
+  "private": true
+}
