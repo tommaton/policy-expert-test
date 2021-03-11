@@ -5,7 +5,8 @@ const allReducer = combineReducers({
   basket: reducer,
 });
 
-const composeEnhancers = ((window as any) && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
-const store = createStore(allReducer, {}, composeEnhancers);
+// eslint-disable-next-line no-underscore-dangle
+const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__();
+const store = createStore(allReducer, composeEnhancers);
 
 export default store;

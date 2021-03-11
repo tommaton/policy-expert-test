@@ -1,11 +1,11 @@
 import { UPDATE_BASKET_FAILURE, UPDATE_BASKET_REQUEST, UPDATE_BASKET_SUCCESS } from './types';
 
-const iniitalState = {
+const initialState = {
   shoppingList: [],
   updateStatus: 'INITIAL',
 };
 
-const reducer = (state = iniitalState, action: any) => {
+const reducer = (state = initialState, action: any) => {
   const { type, payload } = action;
 
   switch (type) {
@@ -30,4 +30,4 @@ const reducer = (state = iniitalState, action: any) => {
   }
 };
 
-export default reducer;
+export { initialState, reducer };
