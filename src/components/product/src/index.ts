@@ -1,2 +1,3 @@
+import Product from './product.component';
 
-export {}
+export default Product;

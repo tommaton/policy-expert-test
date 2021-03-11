@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import Product from '.';
 
-const defaultProps = { name: 'Face Mask', unit: 1, id: 1, price: 2.5 };
+const defaultProps = { prodName: 'Face Mask', unit: 1, id: '1', price: 2.5 };
 
 const renderCoomponent = () => render(<Product {...defaultProps} />);
 
@@ -11,10 +11,10 @@ describe('product', () => {
     renderCoomponent();
   });
 
-  it('should display name and price', () => {
+  it('should display name and price of product', () => {
     const { getByText } = renderCoomponent();
 
-    getByText(defaultProps.name);
+    getByText(defaultProps.prodName);
     getByText(defaultProps.price);
   });
 });
