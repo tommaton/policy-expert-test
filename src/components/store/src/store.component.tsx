@@ -4,9 +4,9 @@ import Product from '@pe/components-product';
 import { Container, Row } from 'react-bootstrap';
 
 const Store = () => (
-  <Container data-testid="myStore">
+  <Container data-testid="myStore" fluid>
     {productData.map(({ prodName, id, unit, price }) => (
-      <Row key={id}>
+      <Row key={id} noGutters>
         <Product id={id} price={price} prodName={prodName} unit={unit} />
       </Row>
     ))}

@@ -6,14 +6,15 @@ function App() {
   return (
     <Container>
       <Row>
-        <Col>Store</Col>
-        <Col>Basket</Col>
+        <Col>
+          <h2>Store</h2>
+          <Store />
+        </Col>
       </Row>
       <Row>
         <Col>
-          <Store />
+          <h2>Basket</h2>
         </Col>
-        <Col>Basket</Col>
       </Row>
     </Container>
   );
