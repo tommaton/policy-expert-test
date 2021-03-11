@@ -13,7 +13,7 @@ describe('product', () => {
   });
 
   it('should render same number of product in product data', async () => {
-    const { findAllByText, getByTestId } = renderCoponent();
+    const { findAllByText } = renderCoponent();
 
     const productItems = await findAllByText(/Item #[0-9]: /);
 
