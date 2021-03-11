@@ -1,11 +1,11 @@
 import { createStore, combineReducers, compose } from 'redux';
-import { BasketReducers } from '../basket';
+import { reducer } from '../basket';
 
-const reducer = combineReducers({
-  basket: BasketReducers,
+const allReducer = combineReducers({
+  basket: reducer,
 });
 
 const composeEnhancers = ((window as any) && (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
-const store = createStore(reducer, composeEnhancers);
+const store = createStore(allReducer, {}, composeEnhancers);
 
 export default store;
