@@ -1,9 +1,22 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { productData } from '@pe/data';
+import configureMockStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
 import Store from '.';
 
-const renderCoponent = () => render(<Store />);
+const mockStore = configureMockStore();
+const store = mockStore({
+  shoppingList: [],
+  updateStatus: 'INITIAL',
+});
+
+const renderCoponent = () =>
+  render(
+    <Provider store={store}>
+      <Store />
+    </Provider>
+  );
 
 describe('product', () => {
   it('should render store', () => {

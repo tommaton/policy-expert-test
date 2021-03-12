@@ -1,6 +1,11 @@
 import { UPDATE_BASKET_FAILURE, UPDATE_BASKET_REQUEST, UPDATE_BASKET_SUCCESS } from './types';
 
-const initialState = {
+interface IInitialState {
+  shoppingList: PolicyExpert.IProductData[];
+  updateStatus: string;
+}
+
+const initialState: IInitialState = {
   shoppingList: [],
   updateStatus: 'INITIAL',
 };
@@ -17,7 +22,7 @@ const reducer = (state = initialState, action: any) => {
     case UPDATE_BASKET_SUCCESS:
       return {
         ...state,
-        ...payload,
+        shoppingList: [...state.shoppingList, payload],
         updateStatus: 'SUCCESS',
       };
     case UPDATE_BASKET_FAILURE:

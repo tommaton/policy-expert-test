@@ -1,5 +1,5 @@
 import { createStore, combineReducers, compose } from 'redux';
-import { reducer } from '../basket';
+import { reducer } from '../basket/src';
 
 const allReducer = combineReducers({
   basket: reducer,

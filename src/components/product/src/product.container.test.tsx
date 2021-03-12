@@ -1,6 +1,6 @@
 import { mapDispatchToProps } from './product.container';
 
-jest.mock('@pe/redux');
+jest.mock('@pe/redux-basket');
 
 describe('Product container', () => {
   describe('mapDispatchToProps', () => {

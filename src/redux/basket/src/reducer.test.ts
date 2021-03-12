@@ -20,8 +20,25 @@ describe('redux-basket', () => {
         });
       });
       it('should set the update status to success with in request', () => {
-        expect(reducer(initialState, { type: UPDATE_BASKET_SUCCESS })).toEqual({
-          shoppingList: [],
+        expect(
+          reducer(initialState, {
+            type: UPDATE_BASKET_SUCCESS,
+            payload: {
+              id: '1',
+              prodName: 'Face Mask',
+              price: 2.5,
+              unit: 1,
+            },
+          })
+        ).toEqual({
+          shoppingList: [
+            {
+              id: '1',
+              prodName: 'Face Mask',
+              price: 2.5,
+              unit: 1,
+            },
+          ],
           updateStatus: 'SUCCESS',
         });
       });
