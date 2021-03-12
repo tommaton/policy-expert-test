@@ -1,4 +1,4 @@
-import { getShoppingList } from './selectors';
+import getShoppingList from './selectors';
 
 describe('redux-basket', () => {
   describe('selectors', () => {
