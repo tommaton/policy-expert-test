@@ -1,6 +1,7 @@
 import { reducer, initialState } from './reducer';
 import * as actions from './actions';
 import * as types from './types';
-import * as selectors from './selectors';
+// eslint-disable-next-line import/no-named-default
+import { default as getShoppingList } from './selectors';
 
-export { reducer, types, initialState, actions, selectors };
+export { reducer, initialState, types, actions, getShoppingList };

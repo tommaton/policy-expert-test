@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Store from '@pe/components-store';
+import ShoppingList from '@pe/components-shopping-list';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Row>
         <Col>
           <h2>Basket</h2>
+          <ShoppingList />
         </Col>
       </Row>
     </Container>
