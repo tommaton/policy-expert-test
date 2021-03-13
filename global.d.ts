@@ -1,6 +1,6 @@
 declare namespace PolicyExpert {
   interface IProductData {
-    id: string;
+    id?: string;
     prodName: string;
     price: number;
     unit: number;

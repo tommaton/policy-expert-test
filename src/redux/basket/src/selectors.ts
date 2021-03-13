@@ -1,7 +1,8 @@
 import { createSelector } from 'reselect';
 import { initialState } from './reducer';
 
-const getShoppingList = (state: PolicyExpert.IGetShoppingList) =>
-  (state.basket && state.basket.shoppingList) || initialState.shoppingList;
+const getShoppingBasket = (state: PolicyExpert.IGetShoppingList) => state.basket.shoppingList || [];
 
-export default createSelector(getShoppingList, (shoppingList: PolicyExpert.IProductData[]) => shoppingList);
+const getShoppingList = createSelector(getShoppingBasket, (shoppingList: PolicyExpert.IProductData[]) => shoppingList);
+
+export { getShoppingList };

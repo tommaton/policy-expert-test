@@ -8,7 +8,7 @@ interface ILocalProductData extends PolicyExpert.IProductData {
 
 const Product: FC<ILocalProductData> = ({ prodName, id, price, unit, addToBasket }) => (
   <>
-    <Col>{`Item #${id}:`}</Col>
+    <Col>{id && `Item #${id}:`}</Col>
     <Col>{prodName}</Col>
     <Col>{price.toFixed(2)}</Col>
     <Col>

@@ -7,7 +7,7 @@ import { actions as basketActions, getShoppingList } from '@pe/redux-basket';
 
 import ShoppingList from './shopping-list.component';
 
-const mapStateToProps = (state: PolicyExpert.IGetShoppingList) => ({
+export const mapStateToProps = (state: PolicyExpert.IGetShoppingList) => ({
   shoppingList: getShoppingList(state),
 });
 

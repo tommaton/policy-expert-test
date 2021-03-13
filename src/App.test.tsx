@@ -7,8 +7,10 @@ import App from './App';
 
 const mockStore = configureMockStore();
 const store = mockStore({
-  shoppingList: [],
-  updateStatus: 'INITIAL',
+  basket: {
+    shoppingList: [],
+    updateStatus: 'INITIAL',
+  },
 });
 
 test('renders app with store', () => {
