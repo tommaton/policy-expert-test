@@ -1,4 +1,4 @@
-import { UPDATE_BASKET_FAILURE, UPDATE_BASKET_REQUEST, UPDATE_BASKET_SUCCESS } from './types';
+import { UPDATE_BASKET_FAILURE, UPDATE_BASKET_REQUEST, ADDTO_BASKET_SUCCESS, REMOVEFROM_BASKET_SUCCESS } from './types';
 import { reducer, initialState } from './reducer';
 
 describe('redux-basket', () => {
@@ -22,7 +22,7 @@ describe('redux-basket', () => {
       it('should set the update status to success with in request', () => {
         expect(
           reducer(initialState, {
-            type: UPDATE_BASKET_SUCCESS,
+            type: ADDTO_BASKET_SUCCESS,
             payload: {
               id: '1',
               prodName: 'Face Mask',
@@ -32,6 +32,67 @@ describe('redux-basket', () => {
           })
         ).toEqual({
           shoppingList: [
+            {
+              id: '1',
+              prodName: 'Face Mask',
+              price: 2.5,
+              unit: 1,
+            },
+          ],
+          updateStatus: 'SUCCESS',
+        });
+      });
+      it('should set the update status to success with in remove request', () => {
+        expect(
+          reducer(
+            {
+              shoppingList: [
+                {
+                  id: '1',
+                  prodName: 'Face Mask',
+                  price: 2.5,
+                  unit: 1,
+                },
+                {
+                  id: '2',
+                  prodName: 'Toilet Paper',
+                  price: 0.65,
+                  unit: 1,
+                },
+                {
+                  id: '1',
+                  prodName: 'Face Mask',
+                  price: 2.5,
+                  unit: 1,
+                },
+                {
+                  id: '1',
+                  prodName: 'Face Mask',
+                  price: 2.5,
+                  unit: 1,
+                },
+              ],
+              updateStatus: 'PENDING',
+            },
+            {
+              type: REMOVEFROM_BASKET_SUCCESS,
+              payload: 1,
+            }
+          )
+        ).toEqual({
+          shoppingList: [
+            {
+              id: '1',
+              prodName: 'Face Mask',
+              price: 2.5,
+              unit: 1,
+            },
+            {
+              id: '1',
+              prodName: 'Face Mask',
+              price: 2.5,
+              unit: 1,
+            },
             {
               id: '1',
               prodName: 'Face Mask',

@@ -9,3 +9,8 @@ export const addToBasket = (id: string) => {
     payload: chosenProduct,
   };
 };
+
+export const removeFromBasket = (shoppingItemIndex: number) => ({
+  type: UPDATE_BASKET_SUCCESS,
+  payload: shoppingItemIndex,
+});

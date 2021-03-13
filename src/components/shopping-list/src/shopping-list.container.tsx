@@ -12,7 +12,7 @@ export const mapStateToProps = (state: PolicyExpert.IGetShoppingList) => ({
 });
 
 export const mapDispatchToProps = (dispatch: Dispatch) => ({
-  addToBasket: (prodId: string) => dispatch(basketActions.addToBasket(prodId)),
+  removeFromBasket: (listIndex: number) => dispatch(basketActions.removeFromBasket(listIndex)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingList);

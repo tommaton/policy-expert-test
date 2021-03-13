@@ -45,7 +45,7 @@ describe('Shopping List container', () => {
 
     it('should return an object containing actions', () => {
       expect(props.removeFromBasket).toBeDefined();
-      props.removeFromBasket('index');
+      props.removeFromBasket(1);
       expect(dispatch).toHaveBeenCalledTimes(1);
     });
   });

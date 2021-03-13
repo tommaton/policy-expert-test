@@ -1,4 +1,4 @@
-import { UPDATE_BASKET_FAILURE, UPDATE_BASKET_REQUEST, UPDATE_BASKET_SUCCESS } from './types';
+import { UPDATE_BASKET_FAILURE, UPDATE_BASKET_REQUEST, ADDTO_BASKET_SUCCESS, REMOVEFROM_BASKET_SUCCESS } from './types';
 
 const initialState: PolicyExpert.IInitialState = {
   shoppingList: [],
@@ -14,7 +14,13 @@ const reducer = (state = initialState, action: any) => {
         ...state,
         updateStatus: 'PENDING',
       };
-    case UPDATE_BASKET_SUCCESS:
+    case ADDTO_BASKET_SUCCESS:
+      return {
+        ...state,
+        shoppingList: [...state.shoppingList, payload],
+        updateStatus: 'SUCCESS',
+      };
+    case REMOVEFROM_BASKET_SUCCESS:
       return {
         ...state,
         shoppingList: [...state.shoppingList, payload],
