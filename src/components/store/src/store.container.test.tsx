@@ -1,4 +1,4 @@
-import { mapDispatchToProps } from './product.container';
+import { mapDispatchToProps } from './store.container';
 
 jest.mock('@pe/redux-basket');
 

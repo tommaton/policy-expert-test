@@ -23,7 +23,7 @@ const reducer = (state = initialState, action: any) => {
     case REMOVEFROM_BASKET_SUCCESS:
       return {
         ...state,
-        shoppingList: [...state.shoppingList, payload],
+        shoppingList: state.shoppingList.filter((item, index) => index !== payload),
         updateStatus: 'SUCCESS',
       };
     case UPDATE_BASKET_FAILURE:

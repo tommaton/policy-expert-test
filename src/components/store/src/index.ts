@@ -1,3 +1,3 @@
-import Store from './store.component';
+import Store from './store.container';
 
 export default Store;

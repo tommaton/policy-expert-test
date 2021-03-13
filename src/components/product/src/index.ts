@@ -1,1 +1,3 @@
-export { default } from './product.container';
+import Product from './product.component';
+
+export default Product;

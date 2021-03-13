@@ -4,7 +4,7 @@ import { actions, types } from './index';
 
 const { addToBasket } = actions;
 
-const { UPDATE_BASKET_SUCCESS, UPDATE_BASKET_FAILURE, UPDATE_BASKET_REQUEST } = types;
+const { ADDTO_BASKET_SUCCESS } = types;
 
 const mockStore = configureMockStore();
 
@@ -14,7 +14,7 @@ describe('basket actions', () => {
     store.dispatch(addToBasket('1'));
     expect(store.getActions()).toEqual([
       {
-        type: UPDATE_BASKET_SUCCESS,
+        type: ADDTO_BASKET_SUCCESS,
         payload: {
           id: '1',
           prodName: 'Face Mask',

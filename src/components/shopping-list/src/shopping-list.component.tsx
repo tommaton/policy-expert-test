@@ -12,7 +12,7 @@ const ShoppingList: FC<IShoppingList> = ({ shoppingList }) => {
     <Container data-testid="myShoppinglist" fluid>
       {shoppingList.map(({ prodName, id, unit, price }) => (
         <Row key={id} noGutters>
-          <Product price={price} prodName={prodName} unit={unit} />
+          <Product id={id} price={price} prodName={prodName} unit={unit} />
         </Row>
       ))}
     </Container>
