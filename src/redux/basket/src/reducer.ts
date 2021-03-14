@@ -17,7 +17,7 @@ const reducer = (state = initialState, action: any) => {
     case ADDTO_BASKET_SUCCESS:
       return {
         ...state,
-        shoppingList: [...state.shoppingList, payload],
+        shoppingList: [...state.shoppingList, payload].slice().sort((a, b) => parseFloat(b.id) - parseFloat(a.id)),
         updateStatus: 'SUCCESS',
       };
     case REMOVEFROM_BASKET_SUCCESS:

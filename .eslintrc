@@ -61,6 +61,7 @@
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-wrap-multilines": "off",
     "react/destructuring-assignment": "off",
+    "react/no-array-index-key": "off",
     "@typescript-eslint/comma-dangle": ["error", {
       "arrays": "only-multiline",
       "objects": "only-multiline",

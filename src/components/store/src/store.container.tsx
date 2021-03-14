@@ -1,6 +1,5 @@
 // Packages
 import { connect } from 'react-redux';
-import React from 'react';
 import { Dispatch } from 'redux';
 
 // Components
