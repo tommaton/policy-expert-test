@@ -1,3 +1,4 @@
 import productData from './products';
+import discountData from './discounts';
 
-export { productData };
+export { discountData, productData };

@@ -24,4 +24,14 @@ declare namespace PolicyExpert {
     quantity: number;
     value: number;
   }
+
+  interface ISaving {
+    description: string;
+    saving: number;
+  }
+
+  interface ISavings {
+    savings: ISaving[];
+    totalSavings: number;
+  }
 }

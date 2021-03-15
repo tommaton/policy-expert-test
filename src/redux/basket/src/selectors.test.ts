@@ -1,4 +1,4 @@
-import { getShoppingList, getBasketSubTotal, getBasketTotal } from './selectors';
+import { getShoppingList, getBasketSubTotal, getBasketTotal, getSavings } from './selectors';
 
 describe('redux-basket', () => {
   describe('selectors', () => {
@@ -106,7 +106,7 @@ describe('redux-basket', () => {
         },
       };
       it('should return a subtotal of all items in basket', () => {
-        expect(getSavings(state)).toBe({
+        expect(getSavings(state)).toStrictEqual({
           savings: [
             {
               description: 'Face Mask 2 for £4',
