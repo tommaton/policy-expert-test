@@ -12,21 +12,21 @@ describe('Shopping List container', () => {
             unit: 1,
           },
           {
+            id: '1',
+            prodName: 'Face Mask',
+            price: 2.5,
+            unit: 1,
+          },
+          {
+            id: '1',
+            prodName: 'Face Mask',
+            price: 2.5,
+            unit: 1,
+          },
+          {
             id: '2',
             prodName: 'Toilet Paper',
             price: 0.65,
-            unit: 1,
-          },
-          {
-            id: '1',
-            prodName: 'Face Mask',
-            price: 2.5,
-            unit: 1,
-          },
-          {
-            id: '1',
-            prodName: 'Face Mask',
-            price: 2.5,
             unit: 1,
           },
         ],
@@ -34,8 +34,9 @@ describe('Shopping List container', () => {
     };
 
     it('maps state correctly', () => {
-      const props = mapStateToProps(state);
-      expect(props.shoppingList).toBe(state.basket.shoppingList);
+      const { shoppingList, subTotal } = mapStateToProps(state);
+      expect(shoppingList).toBe(state.basket.shoppingList);
+      expect(subTotal).toEqual(8.15);
     });
   });
 
