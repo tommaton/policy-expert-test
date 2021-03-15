@@ -1,4 +1,4 @@
-import { getShoppingList, getBasketSubTotal } from './selectors';
+import { getShoppingList, getBasketSubTotal, getBasketTotal } from './selectors';
 
 describe('redux-basket', () => {
   describe('selectors', () => {
@@ -42,6 +42,10 @@ describe('redux-basket', () => {
 
       it('should return a subtotal of all items in basket', () => {
         expect(getBasketSubTotal(state)).toBe(5.65);
+      });
+
+      it('should return a total of all items in basket', () => {
+        expect(getBasketTotal(state)).toBe(5.65);
       });
     });
   });
