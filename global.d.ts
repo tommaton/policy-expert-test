@@ -9,8 +9,6 @@ declare namespace PolicyExpert {
   interface IInitialState {
     shoppingList: PolicyExpert.IProductData[];
     updateStatus: string;
-    subTotal: number;
-    total: number;
   }
 
   interface IGetShoppingList {

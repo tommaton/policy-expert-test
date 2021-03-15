@@ -3,8 +3,6 @@ import { UPDATE_BASKET_FAILURE, UPDATE_BASKET_REQUEST, ADDTO_BASKET_SUCCESS, REM
 const initialState: PolicyExpert.IInitialState = {
   shoppingList: [],
   updateStatus: 'INITIAL',
-  subTotal: 0.0,
-  total: 0.0,
 };
 
 const reducer = (state = initialState, action: any) => {

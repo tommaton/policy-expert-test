@@ -11,16 +11,12 @@ describe('redux-basket', () => {
         expect(reducer(initialState, { type: 'foo' })).toEqual({
           shoppingList: [],
           updateStatus: 'INITIAL',
-          subTotal: 0.0,
-          total: 0.0,
         });
       });
       it('should set the update status to pending with in request', () => {
         expect(reducer(initialState, { type: UPDATE_BASKET_REQUEST })).toEqual({
           shoppingList: [],
           updateStatus: 'PENDING',
-          subTotal: 0.0,
-          total: 0.0,
         });
       });
       it('should set the update status to success with in request', () => {
@@ -44,8 +40,6 @@ describe('redux-basket', () => {
             },
           ],
           updateStatus: 'SUCCESS',
-          subTotal: 2.5,
-          total: 2.5,
         });
       });
       it('should set the update status to success with in remove request', () => {
@@ -79,8 +73,6 @@ describe('redux-basket', () => {
                 },
               ],
               updateStatus: 'PENDING',
-              subTotal: 8.15,
-              total: 8.15,
             },
             {
               type: REMOVEFROM_BASKET_SUCCESS,
@@ -102,23 +94,19 @@ describe('redux-basket', () => {
               unit: 1,
             },
             {
-              id: '1',
-              prodName: 'Face Mask',
-              price: 2.5,
+              id: '2',
+              prodName: 'Toilet Paper',
+              price: 0.65,
               unit: 1,
             },
           ],
           updateStatus: 'SUCCESS',
-          subTotal: 7.5,
-          total: 7.5,
         });
       });
       it('should set update status to error on failure', () => {
         expect(reducer(initialState, { type: UPDATE_BASKET_FAILURE })).toEqual({
           shoppingList: [],
           updateStatus: 'FAILURE',
-          subTotal: 0.0,
-          total: 0.0,
         });
       });
     });
