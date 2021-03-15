@@ -20,6 +20,7 @@ describe('basket actions', () => {
           prodName: 'Face Mask',
           price: 2.5,
           unit: 1,
+          description: 'each',
         },
       },
     ]);

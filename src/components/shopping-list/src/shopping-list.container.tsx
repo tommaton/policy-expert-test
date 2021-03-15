@@ -2,12 +2,13 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 
 // Components
-import { actions as basketActions, getShoppingList } from '@pe/redux-basket';
+import { actions as basketActions, getShoppingList, getBasketSubTotal } from '@pe/redux-basket';
 
 import ShoppingList from './shopping-list.component';
 
 export const mapStateToProps = (state: PolicyExpert.IGetShoppingList) => ({
   shoppingList: getShoppingList(state),
+  subTotal: getBasketSubTotal(state),
 });
 
 export const mapDispatchToProps = (dispatch: Dispatch) => ({

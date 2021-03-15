@@ -11,9 +11,9 @@ interface IStore {
 
 const Store: FC<IStore> = ({ addToBasket }) => (
   <Container data-testid="myStore" fluid>
-    {productData.map(({ prodName, id, unit, price }) => (
+    {productData.map(({ prodName, id, unit, price, description }) => (
       <Row key={id} noGutters>
-        <Product id={id} price={price} prodName={prodName} unit={unit} />
+        <Product id={id} price={price} prodName={prodName} unit={unit} description={description} />
         <Col>
           <Button variant="success" size="sm" onClick={() => addToBasket(id)}>
             Buy

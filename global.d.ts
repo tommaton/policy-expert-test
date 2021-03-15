@@ -4,6 +4,7 @@ declare namespace PolicyExpert {
     prodName: string;
     price: number;
     unit: number;
+    description: string;
   }
 
   interface IInitialState {

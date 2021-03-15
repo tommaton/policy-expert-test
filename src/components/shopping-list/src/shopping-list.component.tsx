@@ -7,20 +7,26 @@ import Col from 'react-bootstrap/Col';
 interface IShoppingList {
   shoppingList: PolicyExpert.IProductData[];
   removeFromBasket: (index: number) => void;
+  subTotal: number;
 }
 
-const ShoppingList: FC<IShoppingList> = ({ shoppingList, removeFromBasket }) => (
+const ShoppingList: FC<IShoppingList> = ({ shoppingList, removeFromBasket, subTotal }) => (
   <Container data-testid="myShoppinglist" fluid>
-    {shoppingList.map(({ prodName, id, unit, price }, index) => (
+    {shoppingList.map(({ prodName, id, unit, price, description }, index) => (
       <Row key={`${id}-${index}`} noGutters>
-        <Product id={id} price={price} prodName={prodName} unit={unit} />
-        <Col>
+        <Product id={id} price={price} prodName={prodName} unit={unit} description={description} />
+        <Col>{(unit * price).toFixed(2)}</Col>
+        <Col md={{ span: 4 }}>
           <Button variant="success" size="sm" onClick={() => removeFromBasket(index)}>
             Remove
           </Button>
         </Col>
       </Row>
     ))}
+    <Row noGutters>
+      <Col md={{ span: 6 }}>Sub total</Col>
+      <Col>{subTotal.toFixed(2)}</Col>
+    </Row>
   </Container>
 );
 

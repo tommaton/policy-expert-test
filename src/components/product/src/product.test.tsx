@@ -10,7 +10,7 @@ const store = mockStore({
   updateStatus: 'INITIAL',
 });
 
-const defaultProps = { prodName: 'Face Mask', unit: 1, id: '1', price: 2.5 };
+const defaultProps = { prodName: 'Face Mask', unit: 1, id: '1', price: 2.5, description: 'each' };
 
 const renderCoomponent = () =>
   render(
@@ -29,6 +29,6 @@ describe('product', () => {
 
     getByText(`Item #${defaultProps.id}:`);
     getByText(defaultProps.prodName);
-    getByText(defaultProps.price.toFixed(2));
+    getByText(`${defaultProps.price.toFixed(2)} (${defaultProps.description})`);
   });
 });
