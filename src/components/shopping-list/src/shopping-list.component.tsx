@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import Product from '@pe/components-product';
 import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
+import Savings from '@pe/components-savings';
 
 interface IShoppingList {
   shoppingList: PolicyExpert.IProductData[];
@@ -26,6 +26,11 @@ const ShoppingList: FC<IShoppingList> = ({ shoppingList, removeFromBasket, subTo
     ))}
     <Row noGutters>
       <Col md={{ offset: 6 }}>Sub total: {subTotal}</Col>
+    </Row>
+    <Row>
+      <Col>
+        <Savings />
+      </Col>
     </Row>
     <Row noGutters>
       <Col md={{ offset: 6 }}>Total: {total}</Col>

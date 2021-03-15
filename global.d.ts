@@ -27,11 +27,11 @@ declare namespace PolicyExpert {
 
   interface ISaving {
     description: string;
-    saving: number;
+    saving: string;
   }
 
   interface ISavings {
     savings: ISaving[];
-    totalSavings: number;
+    totalSavings: string;
   }
 }

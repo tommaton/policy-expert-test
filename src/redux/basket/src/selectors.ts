@@ -18,32 +18,38 @@ const getSavings = createSelector(
       const prodGroupCount = shoppingList.filter(({ id }) => id === discount.id).length;
       const productDetails = productData.find(({ id }) => id === discount.id);
 
-      if (discount.type === 'BOGOF') {
-        const numberSavingsMade = Math.floor(prodGroupCount / discount.quantity);
+      if (productDetails) {
+        if (discount.type === 'BOGOF') {
+          const numberSavingsMade = Math.floor(prodGroupCount / discount.quantity);
 
-        if (numberSavingsMade > 0) {
-          for (let i = 0; i < numberSavingsMade; i++) {
-            const discountSavings = Number(Math.abs((discount.quantity - discount.value) * productDetails.price) * -1);
-            savings.push({
-              description: `${productDetails?.prodName} ${discount.quantity} for ${discount.value}`,
-              saving: Number(discountSavings.toFixed(2)),
-            });
-            totalSavings += Number(discountSavings.toFixed(2));
+          if (numberSavingsMade > 0) {
+            for (let i = 0; i < numberSavingsMade; i++) {
+              const discountSavings = Number(
+                Math.abs((discount.quantity - discount.value) * productDetails.price) * -1
+              ).toFixed(2);
+              savings.push({
+                description: `${productDetails?.prodName} ${discount.quantity} for ${discount.value}`,
+                saving: discountSavings,
+              });
+              totalSavings += Number(discountSavings);
+            }
           }
         }
-      }
 
-      if (discount.type === 'Price') {
-        const numberSavingsMade = Math.floor(prodGroupCount / discount.quantity);
+        if (discount.type === 'Price') {
+          const numberSavingsMade = Math.floor(prodGroupCount / discount.quantity);
 
-        if (numberSavingsMade > 0) {
-          for (let i = 0; i < numberSavingsMade; i++) {
-            const discountSavings = Number(Math.abs(discount.quantity * productDetails.price - discount.value) * -1);
-            savings.push({
-              description: `${productDetails?.prodName} ${discount.quantity} for £${discount.value}`,
-              saving: Number(discountSavings.toFixed(2)),
-            });
-            totalSavings += Number(discountSavings.toFixed(2));
+          if (numberSavingsMade > 0) {
+            for (let i = 0; i < numberSavingsMade; i++) {
+              const discountSavings = Number(
+                Math.abs(discount.quantity * productDetails.price - discount.value) * -1
+              ).toFixed(2);
+              savings.push({
+                description: `${productDetails?.prodName} ${discount.quantity} for £${discount.value}`,
+                saving: discountSavings,
+              });
+              totalSavings += Number(discountSavings);
+            }
           }
         }
       }
@@ -51,11 +57,15 @@ const getSavings = createSelector(
 
     return {
       savings,
-      totalSavings: Number(totalSavings),
+      totalSavings: Number(totalSavings).toFixed(2),
     };
   }
 );
 
-const getBasketTotal = createSelector(getBasketSubTotal, (total: number) => total);
+const getBasketTotal = createSelector(
+  getBasketSubTotal,
+  getSavings,
+  (total: number, savings) => total + Number(savings.totalSavings)
+);
 
 export { getShoppingList, getBasketSubTotal, getBasketTotal, getSavings };

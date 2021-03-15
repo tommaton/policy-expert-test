@@ -84,7 +84,7 @@ describe('Shopping List container', () => {
       const { shoppingList, subTotal, total } = mapStateToProps(state);
       expect(shoppingList).toBe(state.basket.shoppingList);
       expect(subTotal).toEqual(Number((8.9).toFixed(2)));
-      expect(total).toEqual(7.65);
+      expect(total).toEqual(7.25);
     });
   });
 

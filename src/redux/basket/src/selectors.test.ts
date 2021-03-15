@@ -45,7 +45,7 @@ describe('redux-basket', () => {
       });
 
       it('should return a total of all items in basket', () => {
-        expect(getBasketTotal(state)).toBe(5.65);
+        expect(getBasketTotal(state)).toEqual(4.65);
       });
     });
 
@@ -110,14 +110,14 @@ describe('redux-basket', () => {
           savings: [
             {
               description: 'Face Mask 2 for £4',
-              saving: -1.0,
+              saving: '-1.00',
             },
             {
               description: 'Toilet Paper 6 for 5',
-              saving: -0.65,
+              saving: '-0.65',
             },
           ],
-          totalSavings: -1.65,
+          totalSavings: '-1.65',
         });
       });
     });
