@@ -25,10 +25,10 @@ const ShoppingList: FC<IShoppingList> = ({ shoppingList, removeFromBasket, subTo
       </Row>
     ))}
     <Row noGutters>
-      <Col md={{ offset: 6 }}>Sub total: {subTotal.toFixed(2)}</Col>
+      <Col md={{ offset: 6 }}>Sub total: {subTotal}</Col>
     </Row>
     <Row noGutters>
-      <Col md={{ offset: 6 }}>Total: {total.toFixed(2)}</Col>
+      <Col md={{ offset: 6 }}>Total: {total}</Col>
     </Row>
   </Container>
 );

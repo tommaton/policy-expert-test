@@ -8,8 +8,8 @@ import ShoppingList from './shopping-list.component';
 
 export const mapStateToProps = (state: PolicyExpert.IGetShoppingList) => ({
   shoppingList: getShoppingList(state),
-  subTotal: getBasketSubTotal(state),
-  total: getBasketTotal(state),
+  subTotal: Number(getBasketSubTotal(state).toFixed(2)),
+  total: Number(getBasketTotal(state).toFixed(2)),
 });
 
 export const mapDispatchToProps = (dispatch: Dispatch) => ({
