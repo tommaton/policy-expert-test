@@ -8,9 +8,10 @@ interface IShoppingList {
   shoppingList: PolicyExpert.IProductData[];
   removeFromBasket: (index: number) => void;
   subTotal: number;
+  total: number;
 }
 
-const ShoppingList: FC<IShoppingList> = ({ shoppingList, removeFromBasket, subTotal }) => (
+const ShoppingList: FC<IShoppingList> = ({ shoppingList, removeFromBasket, subTotal, total }) => (
   <Container data-testid="myShoppinglist" fluid>
     {shoppingList.map(({ prodName, id, unit, price, description }, index) => (
       <Row key={`${id}-${index}`} noGutters>
@@ -26,6 +27,10 @@ const ShoppingList: FC<IShoppingList> = ({ shoppingList, removeFromBasket, subTo
     <Row noGutters>
       <Col md={{ span: 6 }}>Sub total</Col>
       <Col>{subTotal.toFixed(2)}</Col>
+    </Row>
+    <Row noGutters>
+      <Col md={{ span: 6 }}>Total</Col>
+      <Col>{total.toFixed(2)}</Col>
     </Row>
   </Container>
 );

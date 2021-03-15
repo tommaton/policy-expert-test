@@ -17,4 +17,11 @@ declare namespace PolicyExpert {
       shoppingList: PolicyExpert.IProductData[];
     };
   }
+
+  interface IDiscountData {
+    id: string;
+    type: 'BOGOF' | 'Price';
+    quantity: number;
+    value: number;
+  }
 }
