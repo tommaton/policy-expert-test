@@ -34,9 +34,10 @@ describe('Shopping List container', () => {
     };
 
     it('maps state correctly', () => {
-      const { shoppingList, subTotal } = mapStateToProps(state);
+      const { shoppingList, subTotal, total } = mapStateToProps(state);
       expect(shoppingList).toBe(state.basket.shoppingList);
       expect(subTotal).toEqual(8.15);
+      expect(total).toEqual(8.15);
     });
   });
 
